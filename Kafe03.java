@@ -30,6 +30,7 @@ public class Kafe03 {
                 break;
         }
         double totalHarga = hargaMenu * jumlah;
+        String ukuranTerbaru = Character.toString(ukuranCup);
 
         switch (ukuranCup) {
             case 'S':
@@ -40,11 +41,13 @@ public class Kafe03 {
             case 'L':
                 totalHarga +=0.4 * totalHarga;
                 break;
+            default :
+                ukuranTerbaru = "Size yang dipilih tidak tersedia" ;
         }
         double diskon = keanggotaan ? 0 : 0.1;
         double nominalBayar = totalHarga - (diskon * totalHarga);
 
-        System.out.println("Item pembelian: " + jumlah + " " + " dengan ukuran cup " + ukuranCup);
+        System.out.println("Item pembelian: " + jumlah + " " + menu + " dengan ukuran cup " + ukuranTerbaru);
         System.out.println("Nominal bayar: " + nominalBayar);
     }
 }
